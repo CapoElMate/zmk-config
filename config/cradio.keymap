@@ -111,7 +111,7 @@
         };
 
         // Capa 4: teclas F. Se activa manteniendo Espacio.
-        // La mitad derecha es transparente para poder usar los home row mods (ej: L = Alt -> Alt+F4).
+        // En la derecha, J K L ' son modificadores directos (Alt IZQUIERDO, no AltGr) para Alt+F4, Ctrl+F5, etc.
         fn_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -119,7 +119,7 @@
             &kp F10    &kp F1     &kp F2     &kp F3     &trans         &trans     &trans     &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  F11     │  F4      │  F5      │  F6      │          │   │          │  Win     │  Ctrl    │  Alt     │  Shift   │
-            &kp F11    &kp F4     &kp F5     &kp F6     &trans         &trans     &trans     &trans     &trans     &trans
+            &kp F11    &kp F4     &kp F5     &kp F6     &trans         &trans     &kp LGUI   &kp LCTRL  &kp LALT   &kp LSHFT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  F12     │  F7      │  F8      │  F9      │          │   │          │          │          │          │          │
             &kp F12    &kp F7     &kp F8     &kp F9     &trans         &trans     &trans     &trans     &trans     &trans
