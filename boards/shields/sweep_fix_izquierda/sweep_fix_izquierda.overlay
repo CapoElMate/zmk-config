@@ -1,0 +1,37 @@
+/*
+ * Shield extra que se aplica DESPUES de cradio_left (ver build.yaml).
+ *
+ * La mitad izquierda quedó cableada distinto al Ferris Sweep original.
+ * Reordenamos los pines (mapeados con el firmware cradio_left_SCAN) para que
+ * cada tecla física caiga en su posición del keymap. Una tecla quedó en el
+ * pin 008 (pro_micro 0) y el pin 031 (pro_micro 21) quedó libre.
+ *
+ * Orden de la lista = índice de kscan en cradio:
+ *   0..4   fila de arriba, izquierda a derecha  (Q W E R T)
+ *   5..9   fila del medio, izquierda a derecha  (A S D F G)
+ *   10..14 fila de abajo,  izquierda a derecha  (Z X C V B)
+ *   15     pulgar de afuera (TAB)
+ *   16     pulgar de adentro (ENTER)
+ */
+
+&kscan0 {
+    input-gpios
+    = <&pro_micro  6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* Q      pin 100 */
+    , <&pro_micro  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* W      pin 024 */
+    , <&pro_micro 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* E      pin 115 */
+    , <&pro_micro  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* R      pin 017 */
+    , <&pro_micro  1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* T      pin 006 */
+    , <&pro_micro  7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* A      pin 011 */
+    , <&pro_micro 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* S      pin 009 */
+    , <&pro_micro 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* D      pin 113 */
+    , <&pro_micro  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* F      pin 020 */
+    , <&pro_micro  0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* G      pin 008 */
+    , <&pro_micro  8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* Z      pin 104 */
+    , <&pro_micro 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* X      pin 010 */
+    , <&pro_micro 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* C      pin 111 */
+    , <&pro_micro  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* V      pin 022 */
+    , <&pro_micro 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* B      pin 029 */
+    , <&pro_micro 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* TAB    pin 002 */
+    , <&pro_micro  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* ENTER  pin 106 */
+    ;
+};
