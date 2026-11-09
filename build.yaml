@@ -22,7 +22,8 @@ include:
   - board: nice_nano_v2
     shield: cradio_left
   - board: nice_nano_v2
-    shield: cradio_right
+    shield: cradio_right sweep_fix_derecha
+    artifact-name: cradio_right
   - board: nice_nano_v2
     shield: settings_reset
   - board: nice_nano_v2
@@ -30,6 +31,6 @@ include:
     snippet: zmk-usb-logging
     artifact-name: cradio_left_LOGS
   - board: nice_nano_v2
-    shield: cradio_right
+    shield: cradio_right sweep_fix_derecha
     snippet: zmk-usb-logging
     artifact-name: cradio_right_LOGS

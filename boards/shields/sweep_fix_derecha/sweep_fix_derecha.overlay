@@ -1,4 +1,5 @@
 /*
+ * Shield extra que se aplica DESPUES de cradio_right (ver build.yaml).
  * Mitad derecha: una tecla quedó soldada al pin 008 (P0.08 = pro_micro 0),
  * que cradio no usa. La leemos ahí en lugar del pin 022 (pro_micro 4),
  * que quedó libre. Es la misma lista que cradio.dtsi con ese único cambio.
