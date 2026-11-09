@@ -1,0 +1,36 @@
+/*
+ * SOLO PARA DIAGNOSTICO. Se aplica despues de cradio_left (ver build.yaml).
+ * Lee TODOS los pines libres de la placa, no solo los 17 de cradio, para
+ * descubrir a que pin quedo soldada cada tecla. En el log, "col: N" es el
+ * indice de esta lista:
+ *
+ *   col  0..10 -> pro_micro 0..10  (008 006 017 020 022 024 100 011 104 106 009)
+ *   col 11..17 -> pro_micro 14 15 16 18 19 20 21  (111 113 010 115 002 029 031)
+ *   col 18..20 -> pads del medio P1.01 P1.02 P1.07 (101 102 107)
+ */
+
+&kscan0 {
+    input-gpios
+    = <&pro_micro  0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&pro_micro  1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&pro_micro  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&pro_micro  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&pro_micro  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&pro_micro  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&pro_micro  6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&pro_micro  7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&pro_micro  8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&pro_micro  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&pro_micro 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&pro_micro 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&pro_micro 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&pro_micro 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&pro_micro 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&pro_micro 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&pro_micro 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&pro_micro 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&gpio1 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    ;
+};

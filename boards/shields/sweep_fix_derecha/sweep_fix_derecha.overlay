@@ -1,28 +1,37 @@
 /*
  * Shield extra que se aplica DESPUES de cradio_right (ver build.yaml).
- * Mitad derecha: una tecla quedó soldada al pin 008 (P0.08 = pro_micro 0),
- * que cradio no usa. La leemos ahí en lugar del pin 022 (pro_micro 4),
- * que quedó libre. Es la misma lista que cradio.dtsi con ese único cambio.
+ *
+ * La mitad derecha quedó cableada distinto al Ferris Sweep original.
+ * En vez de resoldar, reordenamos los pines para que cada tecla física
+ * caiga en su posición del keymap. Además, una tecla quedó en el pin 008
+ * (pro_micro 0), que cradio no usa; el pin 022 (pro_micro 4) quedó libre.
+ *
+ * Orden de la lista = índice de kscan en cradio:
+ *   0..4   fila de arriba, de borde a centro   (P O I U Y)
+ *   5..9   fila del medio, de borde a centro   (' L K J H)
+ *   10..14 fila de abajo,  de borde a centro   (/ . , M N)
+ *   15     pulgar de afuera (BKSP)
+ *   16     pulgar de adentro (SPACE)
  */
 
 &kscan0 {
     input-gpios
-    = <&pro_micro  7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    , <&pro_micro 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    , <&pro_micro 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    , <&pro_micro 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    , <&pro_micro 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    , <&pro_micro 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    , <&pro_micro 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    , <&pro_micro 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    , <&pro_micro 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    , <&pro_micro  1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    , <&pro_micro  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    , <&pro_micro  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    , <&pro_micro  0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* era pro_micro 4 (pin 022) */
-    , <&pro_micro  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    , <&pro_micro  6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    , <&pro_micro  8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    , <&pro_micro  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    = <&pro_micro  7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* arriba  col5  P   pin 011 */
+    , <&pro_micro  6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* arriba  col4  O   pin 100 */
+    , <&pro_micro 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* arriba  col3  I   pin 002 */
+    , <&pro_micro 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* arriba  col2  U   pin 029 */
+    , <&pro_micro 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* arriba  col1  Y   pin 031 */
+    , <&pro_micro 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* medio   col5  '   pin 010 */
+    , <&pro_micro  8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* medio   col4  L   pin 104 */
+    , <&pro_micro 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* medio   col3  K   pin 113 */
+    , <&pro_micro 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* medio   col2  J   pin 115 */
+    , <&pro_micro  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* medio   col1  H   pin 024 */
+    , <&pro_micro 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* abajo   col5  /   pin 009 */
+    , <&pro_micro  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* abajo   col4  .   pin 020 */
+    , <&pro_micro  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* abajo   col3  ,   pin 017 */
+    , <&pro_micro  0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* abajo   col2  M   pin 008 */
+    , <&pro_micro  1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* abajo   col1  N   pin 006 */
+    , <&pro_micro 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* pulgar afuera  BKSP  pin 111 */
+    , <&pro_micro  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* pulgar adentro SPACE pin 106 */
     ;
 };

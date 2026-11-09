@@ -34,3 +34,7 @@ include:
     shield: cradio_right sweep_fix_derecha
     snippet: zmk-usb-logging
     artifact-name: cradio_right_LOGS
+  - board: nice_nano_v2
+    shield: cradio_left sweep_scan_todo
+    snippet: zmk-usb-logging
+    artifact-name: cradio_left_SCAN
