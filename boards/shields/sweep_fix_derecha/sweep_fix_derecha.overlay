@@ -31,7 +31,7 @@
     , <&pro_micro  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* abajo   col3  ,   pin 017 */
     , <&pro_micro  0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* abajo   col2  M   pin 008 */
     , <&pro_micro  1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* abajo   col1  N   pin 006 */
-    , <&pro_micro 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* pulgar afuera  BKSP  pin 111 */
-    , <&pro_micro  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* pulgar adentro SPACE pin 106 */
+    , <&pro_micro  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* pulgar afuera  BKSP  pin 106 */
+    , <&pro_micro 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* pulgar adentro SPACE pin 111 */
     ;
 };
